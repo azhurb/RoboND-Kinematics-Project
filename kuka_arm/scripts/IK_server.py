@@ -17,6 +17,7 @@ from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from geometry_msgs.msg import Pose
 from mpmath import *
 from sympy import *
+import random
 
 
 def handle_calculate_IK(req):
@@ -25,6 +26,7 @@ def handle_calculate_IK(req):
         print "No valid poses received"
         return -1
     else:
+
         # Initialize service response
         joint_trajectory_list = []
         for x in xrange(0, len(req.poses)):
@@ -49,11 +51,10 @@ def handle_calculate_IK(req):
 
             # Create individual transformation matrices
 
-
             
             # Extract end-effector position and orientation from request
-	    # px,py,pz = end-effector position
-	    # roll, pitch, yaw = end-effector orientation
+      # px,py,pz = end-effector position
+      # roll, pitch, yaw = end-effector orientation
             px = req.poses[x].position.x
             py = req.poses[x].position.y
             pz = req.poses[x].position.z
@@ -64,13 +65,18 @@ def handle_calculate_IK(req):
      
             # Calculate joint angles using Geometric IK method
 
-		
+            theta1 = atan2(py, px)
+            theta2 = atan2(pz - 0.75, sqrt(px * px + py * py))
 
+            theta3 = theta4 = theta5 = theta6 = 0
+
+            #print(theta1)
+            #print(theta2)
 
             # Populate response for the IK request
             # In the next line replace theta1,theta2...,theta6 by your joint angle variables
-	    joint_trajectory_point.positions = [theta1, theta2, theta3, theta4, theta5, theta6]
-	    joint_trajectory_list.append(joint_trajectory_point)
+        joint_trajectory_point.positions = [theta1, theta2, theta3, theta4, theta5, theta6]
+        joint_trajectory_list.append(joint_trajectory_point)
 
         rospy.loginfo("length of Joint Trajectory List: %s" % len(joint_trajectory_list))
         return CalculateIKResponse(joint_trajectory_list)
