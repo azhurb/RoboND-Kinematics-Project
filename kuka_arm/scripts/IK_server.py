@@ -17,7 +17,6 @@ from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 from geometry_msgs.msg import Pose
 from mpmath import *
 from sympy import *
-import random
 
 
 def handle_calculate_IK(req):
