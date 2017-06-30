@@ -105,7 +105,7 @@ R0_6 = R_roll * R_pitch * R_yaw
 
 ![alt text][image2]
 
-3. Found Theta 1 using actangent from two sides of right triangle
+3. Found Theta 1 using arctangent from two sides of right triangle
 
 ![alt text][image3]
 
