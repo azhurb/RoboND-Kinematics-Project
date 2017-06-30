@@ -109,7 +109,7 @@ R0_6 = R_roll * R_pitch * R_yaw
 
 ![alt text][image3]
 
-4. Found Theta 3 using Law of cosine. The solution was found on Slack channel.
+4. Found Theta 3 using Law of cosine. The solution was found in the discussion on Slack channel.
 
 ![alt text][image5]
 
