@@ -4,7 +4,9 @@
 
 [image1]: ./misc_images/kuka_schematic.png
 [image2]: ./misc_images/wc.png
-[image3]: ./misc_images/theta1.gif 
+[image3]: ./misc_images/theta1.gif
+[image4]: ./misc_images/3d_scheme.jpg
+[image5]: ./misc_images/cosine_law.png
 
 
 ### Kinematic Analysis
@@ -14,6 +16,9 @@ Using scheme *Image 1* from lesson about KR210 Forward Kinematic and URDF file `
 
 ![alt text][image1]
 *Image 1 - Kuka KR210 Sketch in zero configuration*
+
+![alt text][image4]
+*Image 2 - 3D figure for better understanding where each angle is*
 
  i | alpha(i-1) | a(i-1) | d(i-1) | q(i)
 --- | --- | --- | --- | ---
@@ -97,17 +102,20 @@ R0_6 = R_roll * R_pitch * R_yaw
 1. Prepared DH parameter table for the arm.
 
 2. Found wrist center using formula
+
 ![alt text][image2]
 
 3. Found Theta 1 using actangent from two sides of right triangle
+
 ![alt text][image3]
 
 4. Found Theta 3 using Law of cosine. The solution was found on Slack channel.
 
+![alt text][image5]
+
 5. Found Theta 2 using Theta 3
 
 6. Found Theta 4, 5 and 6 using Euler angles `tf.transformations.euler_from_matrix`
- 
 
 ### Project Implementation
 
