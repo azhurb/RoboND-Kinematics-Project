@@ -99,6 +99,8 @@ R0_6 = R_roll * R_pitch * R_yaw
 
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
 
+It was a very difficult task. Part of the solutions was found during the discussion on the Slack channel, as well as in the third-party videos with kinematics lessons on YouTube.
+
 1. Prepared DH parameter table for the arm.
 
 2. Found wrist center using formula
